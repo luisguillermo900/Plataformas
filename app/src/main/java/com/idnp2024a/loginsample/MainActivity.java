@@ -1,5 +1,6 @@
 package com.idnp2024a.loginsample;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         EditText edtUsername = binding.edtUsername;
         EditText edtPassword = binding.edtPassword;
         Button btnLogin = binding.btnLogin;
+        Button btnAddAccount = binding.btnAddAccount;
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +50,10 @@ public class MainActivity extends AppCompatActivity {
                     Log.d(TAG,"Error en la autenticacion");
                 }
             }
+        });
+        btnAddAccount.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), AccountActivity.class);
+            startActivity(intent);
         });
 
 
